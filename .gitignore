@@ -1,0 +1,38 @@
+# ---- build artifacts ----
+build/
+cmake-build-*/
+out/
+*.o
+*.obj
+*.a
+*.so
+*.so.*
+*.dylib
+*.dll
+*.exe
+*.out
+*.log
+test_model
+
+# ---- CMake ----
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+compile_commands.json
+Makefile
+CTestTestfile.cmake
+Testing/
+
+# ---- model & runtime outputs (not committed) ----
+*.rknn
+test_result.jpg
+train_*.jpg
+
+# ---- editor / OS ----
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db

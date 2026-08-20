@@ -1,0 +1,18 @@
+[Unit]
+Description=RK3588 4-Camera CPU Stitching + NPU Inference
+After=multi-user.target
+
+[Service]
+Type=simple
+# Adjust paths to your deployment directory and RKNN model
+WorkingDirectory=/opt/rga_gpu_cpu_stitch/build
+ExecStartPre=/bin/sleep 5
+ExecStart=/opt/rga_gpu_cpu_stitch/build/rga_gpu_cpu_stitch /opt/rga_gpu_cpu_stitch/build /opt/models/best.rknn
+Restart=on-failure
+RestartSec=10
+User=root
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
